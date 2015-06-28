@@ -6,6 +6,7 @@ var stringAlign = require('string-align');
 module.exports = function (data, opts) {
   opts = opts || {};
   opts.forceDots = opts.forceDots || false;
+  opts.char = opts.char || ' ';
 
   data = data.map(function (item) {
     var parts = String(item).split('.');
@@ -29,10 +30,11 @@ module.exports = function (data, opts) {
   }, { leftWidth: 0, rightWidth: 0 });
 
   return data.map(function (item) {
-    var left = stringAlign(item.left, info.leftWidth, 'right');
+    var left = stringAlign(item.left, info.leftWidth, 'right', opts.char);
     if (info.hasDots) {
-      var right = stringAlign(item.right || '', info.rightWidth, 'left');
-      return left + (opts.forceDots || item.right != null ? '.' : ' ') + right;
+      var middle = opts.forceDots || item.right != null ? '.' : opts.char;
+      var right = stringAlign(item.right || '', info.rightWidth, 'left', opts.char);
+      return left + middle + right;
     }
     else {
       return left;

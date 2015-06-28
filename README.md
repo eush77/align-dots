@@ -32,6 +32,7 @@ Align array of numbers (strings), return array of aligned strings.
 | Option    | Default | Description
 | :-------: | :-----: | ----------:
 | forceDots | `false` | Print dots for all numbers (except they're all integers).
+| char      | `" "`   | Padding character.
 
 ## Install
 
