@@ -21,12 +21,18 @@ module.exports = function (data) {
   var info = data.reduce(function (acc, item) {
     acc.leftWidth = Math.max(acc.leftWidth, item.left.length);
     acc.rightWidth = Math.max(acc.rightWidth, (item.right || '').length);
+    acc.hasDots = acc.hasDots || item.right != null;
     return acc;
   }, { leftWidth: 0, rightWidth: 0 });
 
   return data.map(function (item) {
     var left = stringAlign(item.left, info.leftWidth, 'right');
-    var right = stringAlign(item.right || '', info.rightWidth, 'left');
-    return left + (item.right != null ? '.' : ' ') + right;
+    if (info.hasDots) {
+      var right = stringAlign(item.right || '', info.rightWidth, 'left');
+      return left + (item.right != null ? '.' : ' ') + right;
+    }
+    else {
+      return left;
+    }
   });
 };
