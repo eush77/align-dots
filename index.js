@@ -8,6 +8,11 @@ module.exports = function (data, opts) {
   opts.forceDots = opts.forceDots || false;
   opts.char = opts.char || ' ';
 
+  if (opts.zeroes) {
+    opts.forceDots = true;
+    opts.char = 0;
+  }
+
   data = data.map(function (item) {
     var parts = String(item).split('.');
     if (parts.length > 2) {

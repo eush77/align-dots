@@ -25,7 +25,8 @@
     "center",
     "zero",
     "pad",
-    "padding"
+    "padding",
+    "zeroes"
   ],
   "dependencies": {
     "string-align": "^0.2.0"

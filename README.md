@@ -30,9 +30,10 @@ align(['.25', '0.5', '1.005', '10'])
 Align array of numbers (strings), return array of aligned strings.
 
 | Option    | Default | Description
-| :-------: | :-----: | ----------:
+| :-------: | :-----: | :----------
 | forceDots | `false` | Print dots for all numbers (except they're all integers).
 | char      | `" "`   | Padding character.
+| zeroes    | `false` | Implies `{ forceDots: true, char: 0 }`.
 
 ## Install
 
