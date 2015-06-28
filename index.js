@@ -13,7 +13,7 @@ module.exports = function (data, opts) {
       throw Error('Multiple dots for item: ' + JSON.stringify(item));
     }
     if (parts.length == 1) {
-      parts.push(opts.forceDots ? '' : null);
+      parts.push(null);
     }
     return {
       left: parts[0],
@@ -32,7 +32,7 @@ module.exports = function (data, opts) {
     var left = stringAlign(item.left, info.leftWidth, 'right');
     if (info.hasDots) {
       var right = stringAlign(item.right || '', info.rightWidth, 'left');
-      return left + (item.right != null ? '.' : ' ') + right;
+      return left + (opts.forceDots || item.right != null ? '.' : ' ') + right;
     }
     else {
       return left;

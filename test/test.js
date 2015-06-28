@@ -60,10 +60,10 @@ test('forceDots', function (t) {
                ' .2 ',
                ' .10']);
   t.deepEqual(align([1, 4, 16, 256], { forceDots: true }),
-              ['  1.',
-               '  4.',
-               ' 16.',
-               '256.']);
+              ['  1',
+               '  4',
+               ' 16',
+               '256']);
   t.deepEqual(align(['1', '4.', '16', '256'], { forceDots: true }),
               ['  1.',
                '  4.',
