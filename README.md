@@ -25,9 +25,13 @@ align(['.25', '0.5', '1.005', '10'])
 
 ## API
 
-#### `align(data)`
+#### `align(data, [opts])`
 
 Align array of numbers (strings), return array of aligned strings.
+
+| Option    | Default | Description
+| :-------: | :-----: | ----------:
+| forceDots | `false` | Print dots for all numbers.
 
 ## Install
 
