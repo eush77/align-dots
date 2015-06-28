@@ -1,4 +1,4 @@
-[![npm](https://nodei.co/npm/align-dots.png)](https://nodei.co/npm/align-dots/)
+[![npm](https://nodei.co/npm/align-dots.png)](https://npmjs.com/package/align-dots)
 
 # align-dots
 
